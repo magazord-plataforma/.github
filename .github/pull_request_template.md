@@ -14,7 +14,9 @@ Elenque abaixo a listagem das atividades relacionadas as modificações aplicada
 
 ## Tipo de modificação
 
-Seleciona das opções abaixo a que melhor representa o conjunto de modificações enviado:
+Seleciona das opções abaixo a que melhor representa o conjunto de modificações enviado.
+
+Marque um `x` na opção que melhor se aplique:
 
 - [ ] Bug fix (corrige um problema sem causar impacto em outras funcionalides existentes)
 - [ ] New feature (adiciona uma nova funcionalidade sem causar impacto em outras funcionalides existentes)
