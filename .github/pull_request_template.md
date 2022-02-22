@@ -4,7 +4,13 @@
 
 Inclua um resumo das alterações que foram aplicadas e qual o problema que foi corrigido (caso for aplicável).  Inclua também em sua descrição as motivações relevantes e o contexto no qual a modificação será aplicada. Não se esqueça de listar quais as dependências necessárias para essa modificação.
 
-Correções # (issue)
+### Correções (issue)
+
+Elenque abaixo a listagem das atividades relacionadas ao pull request
+
+- [#165848 - Migrar repositórios do projeto MagaZord para o Github](https://redmine.magazord.com.br/issues/165848)
+- [#165851 - Migrar repositório magazord para o Github](https://redmine.magazord.com.br/issues/165851)
+
 
 ## Tipo de modificação
 
