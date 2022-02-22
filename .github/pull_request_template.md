@@ -2,7 +2,7 @@
 
 ## Descrição
 
-Inclua um resumo das altearções que foram aplicadas e qual o problema que foi corrigido (caso for aplicável).  Inclua também em sua descrição as motivações relevantes e o contexto no qual a modificação será aplicada. Não se esqueça de listar quais as dependências necessárias para essa modificação.
+Inclua um resumo das alterações que foram aplicadas e qual o problema que foi corrigido (caso for aplicável).  Inclua também em sua descrição as motivações relevantes e o contexto no qual a modificação será aplicada. Não se esqueça de listar quais as dependências necessárias para essa modificação.
 
 Correções # (issue)
 
@@ -10,8 +10,8 @@ Correções # (issue)
 
 Seleciona das opções abaixo a que melhor representa o conjunto de modificações enviado:
 
-- [ ] Bug fix (corrige um problema)
-- [ ] New feature (adiciona uma nova funcionalidade)
+- [ ] Bug fix (corrige um problema sem causar impacto em outras funcionalides existentes)
+- [ ] New feature (adiciona uma nova funcionalidade sem causar impacto em outras funcionalides existentes)
 - [ ] Breaking change (correção ou nova funcionalidade que resultará em funcionalidades existentes a não funcionar como esperado)
 - [ ] This change requires a documentation update
 
