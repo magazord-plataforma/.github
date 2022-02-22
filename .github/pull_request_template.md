@@ -33,7 +33,7 @@ Descreva os testes que você executou de modo a validar as modificações. Forne
 - [ ] Meu código segue as recomendações de estilo do projeto.
 - [ ] Eu realizei uma auto-revisão do meu próprio código.
 - [ ] Eu comentei o meu código, principalmente em áreas difíceis de entender.
-- [ ] Eu realizei as modificações correspondnetes na documentação (caso aplique).
+- [ ] Eu realizei as modificações correspondnetes na documentação.
 - [ ] Minhas modificações não geram nenhum warning.
-- [ ] Quaisquer modificiações relacionadas foram publicadas nos repositórios relevantes.
-- [ ] Eu verifiquei o meu código e corrige erros de sintaxe.
+- [ ] Quaisquer modificações relacionadas foram publicadas nos repositórios relevantes.
+- [ ] Eu verifiquei o meu código e corrigi erros de sintaxe.
