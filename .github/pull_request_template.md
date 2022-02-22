@@ -19,7 +19,6 @@ Seleciona das opções abaixo a que melhor representa o conjunto de modificaçõ
 - [ ] Bug fix (corrige um problema sem causar impacto em outras funcionalides existentes)
 - [ ] New feature (adiciona uma nova funcionalidade sem causar impacto em outras funcionalides existentes)
 - [ ] Breaking change (correção ou nova funcionalidade que resultará em funcionalidades existentes a não funcionar como esperado)
-- [ ] This change requires a documentation update
 
 ## Como essa alteração foi testada?
 
