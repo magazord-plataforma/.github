@@ -6,7 +6,7 @@ Inclua um resumo das alterações que foram aplicadas e qual o problema que foi 
 
 ### Correções (issue)
 
-Elenque abaixo a listagem das atividades relacionadas ao pull request
+Elenque abaixo a listagem das atividades relacionadas as modificações aplicadas.
 
 - [#165848 - Migrar repositórios do projeto MagaZord para o Github](https://redmine.magazord.com.br/issues/165848)
 - [#165851 - Migrar repositório magazord para o Github](https://redmine.magazord.com.br/issues/165851)
