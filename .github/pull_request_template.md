@@ -18,8 +18,8 @@ Seleciona das opções abaixo a que melhor representa o conjunto de modificaçõ
 
 Marque um `x` na opção que melhor se aplique:
 
-- [ ] Bug fix (corrige um problema sem causar impacto em outras funcionalides existentes)
-- [ ] New feature (adiciona uma nova funcionalidade sem causar impacto em outras funcionalides existentes)
+- [ ] Bug fix (corrige um problema sem causar impacto em outras funcionalidades existentes)
+- [ ] New feature (adiciona uma nova funcionalidade sem causar impacto em outras funcionalidades existentes)
 - [ ] Breaking change (correção ou nova funcionalidade que resultará em funcionalidades existentes a não funcionar como esperado)
 
 ## Como essa alteração foi testada?
