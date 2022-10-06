@@ -9,8 +9,6 @@ Inclua um resumo das alterações que foram aplicadas e qual o problema que foi 
 Elenque abaixo a listagem das atividades relacionadas as modificações aplicadas.
 
 - [#165848 - Migrar repositórios do projeto MagaZord para o Github](https://redmine.magazord.com.br/issues/165848)
-- [#165851 - Migrar repositório magazord para o Github](https://redmine.magazord.com.br/issues/165851)
-
 
 ## Tipo de modificação
 
@@ -20,6 +18,7 @@ Marque um `x` na opção que melhor se aplique:
 
 - [ ] Bug fix (corrige um problema sem causar impacto em outras funcionalidades existentes)
 - [ ] New feature (adiciona uma nova funcionalidade sem causar impacto em outras funcionalidades existentes)
+- [ ] Improvement (adiciona melhorias em contextos como os de performance, estrutura, refatoração ou documentação)
 - [ ] Breaking change (correção ou nova funcionalidade que resultará em funcionalidades existentes a não funcionar como esperado)
 
 ## Como essa alteração foi testada?
