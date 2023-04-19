@@ -8,7 +8,7 @@ Inclua um resumo das alterações que foram aplicadas e qual o problema que foi 
 
 Elenque abaixo a listagem das atividades relacionadas as modificações aplicadas.
 
-- [#165848 - Migrar repositórios do projeto MagaZord para o Github](https://redmine.magazord.com.br/issues/165848)
+- [MAG-9999 - TituloAtividade](https://zorders.atlassian.net/browse/MAG-9999)
 
 ## Tipo de modificação
 
