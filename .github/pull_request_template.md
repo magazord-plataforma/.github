@@ -1,11 +1,5 @@
 # Pull Request: Título
 
-## Descrição
-
-Inclua um resumo das alterações que foram aplicadas e qual o problema que foi corrigido (caso for aplicável). 
-
-Inclua também em sua descrição as motivações relevantes e o contexto no qual a modificação será aplicada. Não se esqueça de listar as dependências necessárias para essa modificação.
-
 ### Correções (issue)
 
 Elenque abaixo a listagem das atividades relacionadas as modificações aplicadas.
