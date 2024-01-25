@@ -1,8 +1,24 @@
 # Contribuindo
 
-Toda e qualquer contribuição é **bem-vinda** e será totalmente **reconhecida**.
-
 Contribuições são aceitas por meio de Pull Request no Github do respectivo repositório.
+
+## Commits
+
+O projeto segue um padrão estrito de mensagens para commits sendo que deve atender o formato abaixo:
+
+```text
+type(scope?): issue? - message
+```
+
+* Os campos **type**, **scope** e **message** são definidos de acordo com o padrão [Convential Commits][link-convent]. 
+* O campo **issue** representa o identificador da atividade qual originou a melhoria.
+
+```text
+style: MAG-21249 - definição style repo commit
+```
+
+O valor MAG-21249 corresponde ao identificador da atividade relacionada a melhoria criada pelo aplicativo de controle.
+
 
 ## Pull Requests
 
@@ -19,3 +35,4 @@ Contribuições são aceitas por meio de Pull Request no Github do respectivo re
   encaminhar as melhorias.
 
 [link-squash]: http://www.git-scm.com/book/en/v2/Git-Tools-Rewriting-History#Changing-Multiple-Commit-Messages
+[link-convent]: https://www.conventionalcommits.org/en/v1.0.0/
