@@ -1,0 +1,9 @@
+#!/bin/bash
+
+branch="$(git rev-parse --abbrev-ref HEAD)"
+
+# Restringimos o trabalho em branches públicos
+if [[ "$branch" =~ ^master|^sprint|main ]]; then
+  echo "Não permitimos modificações diretamente no branch: $branch"
+  exit 1
+fi
