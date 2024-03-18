@@ -1,0 +1,64 @@
+name: watchdog
+
+on:
+  workflow_call:  
+    inputs:
+      actor:
+        required: true
+        type: string
+      from:
+        required: true
+        type: string
+      to:
+        required: true
+        type: string
+      link:
+        required: true
+        type: string
+      title:
+        required: true
+        type: string
+      config:
+        required: true
+        type: string
+    secrets:
+      WD_NOTIFY_URL:
+        required: true
+      WD_NOTIFY_TOPIC:
+        required: true
+      WD_NOTIFY_TOKEN:
+        required: true
+
+jobs:
+  run-watchdog:
+    runs-on: ubuntu-latest
+    name: run-watchdog
+
+    steps:
+      - name: Checkout code
+        id: checkout-code
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+          set-safe-directory: '*'
+
+      - name: download deps
+        run: |
+          sudo apt-get update && sudo apt-get install -y libssl-dev
+          curl -s -L -o watchdog $(curl -s https://api.github.com/repos/realfabecker/watchdog/releases/latest | grep browser_download_url | cut -d '"' -f 4)
+          chmod +x watchdog
+        shell: bash
+
+      - name: run watchdog
+        env:
+          WD_NOTIFY_URL: ${{ secrets.WD_NOTIFY_URL }}
+          WD_NOTIFY_TOPIC: ${{ secrets.WD_NOTIFY_TOPIC }}
+          WD_NOTIFY_TOKEN: ${{ secrets.WD_NOTIFY_TOKEN }}
+        run: |
+          ./watchdog --actor ${{ inputs.actor }} \
+              --from ${{ inputs.from }} \
+              --to ${{ inputs.to }} \
+              --link "${{ inputs.link }}" \
+              --title "${{ inputs.title }}" \
+              --config ${{ inputs.config }}
+        shell: bash
