@@ -1,0 +1,13 @@
+#!/bin/bash
+set -e 
+set -x
+
+# instalação considerando diretório de usuário
+cp -r .git-templates ~/.git-templates
+
+# configuração base de tamplates git
+git config --global init.templatedir '~/.git-templates'
+
+# definição de privilégios de execução
+chmod a+x ~/.git-templates/hooks/pre-commit
+chmod a+x ~/.git-templates/hooks/commit-msg

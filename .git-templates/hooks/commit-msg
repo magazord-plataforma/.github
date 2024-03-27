@@ -1,0 +1,19 @@
+#!/usr/bin/env bash
+
+commit_regex='^(MAG-[0-9]+\s-\s)?\w+(\(.*\))?:.+$'
+
+error_msg="header must be in format 'type(scope): subject' or 'issue - type(scope): subject'
+
+      Examples:
+
+          feat: send an email to the customer when a product is shipped
+
+          MAG-22537 - feat: criado endpoint de busca de nf pela chave
+
+          MAG-1245 - feat(ui): ajuste hint exibe derivação no hover
+"
+
+if ! grep -qE "$commit_regex" $1; then
+    echo "$error_msg" >&2
+    exit 1
+fi

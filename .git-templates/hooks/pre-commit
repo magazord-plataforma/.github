@@ -1,0 +1,8 @@
+#!/bin/bash
+branch="$(git rev-parse --abbrev-ref HEAD)"
+
+# Restringimos o trabalho em branches públicos
+if [[ "$branch" =~ ^master|^sprint|release ]]; then
+  echo "Commits are not allowed on branch: $branch"
+  exit 1
+fi
