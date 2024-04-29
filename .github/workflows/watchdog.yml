@@ -55,10 +55,12 @@ jobs:
           WD_NOTIFY_TOPIC: ${{ secrets.WD_NOTIFY_TOPIC }}
           WD_NOTIFY_TOKEN: ${{ secrets.WD_NOTIFY_TOKEN }}
         run: |
+          pull_title="$(echo ${{ inputs.title }} | tr -d '"')"
+          
           ./watchdog --actor ${{ inputs.actor }} \
               --from ${{ inputs.from }} \
               --to ${{ inputs.to }} \
               --link "${{ inputs.link }}" \
-              --title "${{ inputs.title }}" \
+              --title "${pull_title}" \
               --config ${{ inputs.config }}
         shell: bash
