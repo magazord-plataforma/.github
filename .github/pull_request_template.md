@@ -4,7 +4,7 @@
 
 Elenque abaixo a listagem das atividades relacionadas as modificações aplicadas.
 
-- [MAG-9999 - TituloAtividade](https://zorders.atlassian.net/browse/MAG-9999)
+- [MAG-9999](https://zorders.atlassian.net/browse/MAG-9999)
 
 ## Checklist:
 
