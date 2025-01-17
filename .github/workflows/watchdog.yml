@@ -45,7 +45,7 @@ jobs:
       - name: download deps
         run: |
           sudo apt-get update && sudo apt-get install -y libssl-dev
-          curl -s -L -o watchdog $(curl -s https://api.github.com/repos/realfabecker/watchdog/releases/latest | grep browser_download_url | cut -d '"' -f 4)
+          curl -s -L -o watchdog $(curl -s https://api.github.com/repos/magazord-plataforma/watchdog/releases/latest | grep browser_download_url | cut -d '"' -f 4)
           chmod +x watchdog
         shell: bash
 
