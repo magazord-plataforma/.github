@@ -1,19 +1,92 @@
-#!/usr/bin/env bash
+#!/bin/bash
 
-commit_regex='^(MAG-[0-9]+\s-\s)?\w+(\(.*\))?:.+$'
+repo_url=$(git remote show origin | grep 'Fetch URL' | awk '{print $3}')
 
-error_msg="header must be in format 'type(scope): subject' or 'issue - type(scope): subject'
+repo_name=$(basename "$repo_url" .git)
 
-      Examples:
+case "$repo_name" in
+  "worker-magazord-marketplace")
+  commit_regex='^(MAG-[0-9]+\s-\s)?\w+(\(.*\))?:.+$'
+  error_msg_format="ERRO: O cabeçalho do commit deve estar no formato 'type(scope): subject' ou 'issue - type(scope): subject'
 
-          feat: send an email to the customer when a product is shipped
+  Exemplos:
+    feat(global): added readme.md file
+    MAG-22537 - feat(webcontinental): adicionado suporte a atualização de código secundário
+    feat(global): ajuste nome constante global
+  "
 
-          MAG-22537 - feat: criado endpoint de busca de nf pela chave
+  commit_header=$(head -n 1 "$1")
 
-          MAG-1245 - feat(ui): ajuste hint exibe derivação no hover
-"
-
-if ! grep -qE "$commit_regex" $1; then
-    echo "$error_msg" >&2
+  if ! echo "$commit_header" | grep -qE "$commit_regex"; then
+    echo "$error_msg_format" >&2
     exit 1
-fi
+  fi
+
+  modified_scopes=$(git diff --cached --name-only | sed -e 's|/.*||' | sort -u)
+
+  if [ -z "$modified_scopes" ]; then
+    exit 0
+  fi
+
+  scope_count=$(echo "$modified_scopes" | wc -w)
+
+  commit_scope=$(echo "$commit_header" | sed -n 's/.*(\([^)]*\)).*/\1/p')
+
+  # Se apenas UMA pasta/escopo foi modificada
+  if [ "$scope_count" -eq 1 ]; then
+      single_item=$modified_scopes
+
+      # Verifica se o item único é um diretório
+      if [ -d "$single_item" ]; then
+          # Se for um diretório, o escopo DEVE ser o nome do diretório
+          expected_scope=$single_item
+          if [ "$commit_scope" != "$expected_scope" ]; then
+              echo "ERRO: As alterações são apenas no escopo '$expected_scope'." >&2
+              echo "O escopo do commit deve ser '($expected_scope)'." >&2
+              echo "Encontrado: '($commit_scope)'" >&2
+              exit 1
+          fi
+      else
+          # Se NÃO for um diretório (é um arquivo na raiz), o escopo DEVE ser 'global'
+          expected_scope="global"
+          if [ "$commit_scope" != "$expected_scope" ]; then
+              echo "ERRO: Alterações em arquivos na raiz do projeto exigem o escopo '(global)'." >&2
+              echo "Encontrado: '($commit_scope)'" >&2
+              exit 1
+          fi
+      fi
+  # Se MÚLTIPLAS pastas/escopos foram modificadas
+  elif [ "$scope_count" -gt 1 ]; then
+      expected_scope="global"
+      if [ "$commit_scope" != "$expected_scope" ]; then
+        echo "ERRO: As alterações ocorrem em múltiplos escopos." >&2
+        echo "O escopo do commit deve ser '(global)'." >&2
+        echo "Encontrado: '($commit_scope)'" >&2
+        exit 1
+      fi
+  fi
+
+  exit 0
+    ;;
+
+  *)
+    # --- Default block ---
+    commit_regex='^(MAG-[0-9]+\s-\s)?\w+(\(.*\))?:.+$'
+
+    error_msg="header must be in format 'type(scope): subject' or 'issue - type(scope): subject'
+
+          Examples:
+
+              feat: send an email to the customer when a product is shipped
+
+              MAG-22537 - feat: criado endpoint de busca de nf pela chave
+
+              MAG-1245 - feat(ui): ajuste hint exibe derivação no hover
+    "
+
+    if ! grep -qE "$commit_regex" $1; then
+        echo "$error_msg" >&2
+        exit 1
+    fi
+    ;;
+esac
