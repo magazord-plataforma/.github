@@ -15,11 +15,17 @@ issue? type(scope?):  message
 
 ```text
 Exemplos:
-    feat(global): ajuste nome constante global
+    # definição padrão de commit sem issue relacionada
+    feat: ajuste nome constante global
+
+    # o escopo é utilizado para delimitar o contexto
+    feat(api): ajuste nome constante global
+
+    # uma issue code é utilizada para controle de tasks
     MAG-22537 - feat(webcontinental): adicionado suporte a atualização de código secundário    
 ```
 
-O valor MAG-21249 corresponde ao identificador da atividade relacionada a melhoria criada pelo aplicativo de controle.
+O valor MAG-22537 corresponde ao identificador da atividade relacionada a melhoria criada pelo aplicativo de controle.
 
 
 ## Pull Requests
