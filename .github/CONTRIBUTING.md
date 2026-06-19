@@ -7,14 +7,16 @@ Contribuições são aceitas por meio de Pull Request no Github do respectivo re
 O projeto segue um padrão estrito de mensagens para commits sendo que deve atender o formato abaixo:
 
 ```text
-type(scope?): issue? - message
+issue? type(scope?):  message
 ```
 
 * Os campos **type**, **scope** e **message** são definidos de acordo com o padrão [Convential Commits][link-convent]. 
 * O campo **issue** representa o identificador da atividade qual originou a melhoria.
 
 ```text
-style: MAG-21249 - definição style repo commit
+Exemplos:
+    feat(global): ajuste nome constante global
+    MAG-22537 - feat(webcontinental): adicionado suporte a atualização de código secundário    
 ```
 
 O valor MAG-21249 corresponde ao identificador da atividade relacionada a melhoria criada pelo aplicativo de controle.
